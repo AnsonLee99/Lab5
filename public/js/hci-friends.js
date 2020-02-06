@@ -3,6 +3,13 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	$("a").click(function(e) {
+		e.preventDefault();
+		
+		$("h3", this).text(anagrammedName($(this).text().trim()))
+		
+	});
 })
 
 /*
@@ -10,6 +17,8 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	
 }
 
 function anagrammedName(name) {
@@ -44,3 +53,4 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
